@@ -24,5 +24,7 @@ int my_putchar (char c);
 int _print_char(va_list ap);
 int _print_string(va_list ap);
 int _print_percent(va_list ap);
+char *convert(unsigned int num, int base);
+int get_print(const char *format, print_type argument[], va_list ap);
 
 #endif
