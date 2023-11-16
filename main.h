@@ -20,7 +20,7 @@ typedef struct print
 } print_type;
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int my_putchar (char c);
 int _print_char(va_list ap);
 int _print_string(va_list ap);
 int _print_percent(va_list ap);
