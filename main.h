@@ -1,30 +1,44 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
+#include <limits.h>
 #include <stdio.h>
-#include <stdint.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
- * struct print - print
- * @parament: The operator
- * @f: The function assciated
+ * struct format - printf converter
+ * @id: type char pointer of the specifier
+ * @func: function for the conversion specifier
+ *
  */
 
-typedef struct print
+typedef struct format
 {
-	char *parameter;
-	int (*f)(va_list ap);
-} print_type;
+	char *id;
+	int (*func)();
+} merge;
 
-int _printf(const char *format, ...);
+int *_strcpy(char *dest, char *src);
 int _putchar(char c);
-int _print_char(va_list ap);
-int _print_string(va_list ap);
-int _print_percent(va_list ap);
-char *convert(unsigned int num, int base);
-int get_print(const char *format, print_type argument[], va_list ap);
+int _printf(const char *format, ...);
+int char_print(va_list val);
+int str_print(va_list val);
+int _strlen(char *s);
+int _strlenc(const char *s);
+int print_pc(void);
+int printi(va_list args);
+int printd(va_list args);
+int printb(va_list val);
+int printu(va_list args);
+int printo(va_list val);
+int printx(va_list val);
+int printX(va_list val);
+int printS(va_list val);
+int _printX(unsigned int n);
+int printp(va_list val);
+int _printx(unsigned long int n);
+int printr(va_list args);
+int printR13(va_list args);
 
-#endif
+#endif/*MAIN_H*/
