@@ -3,29 +3,18 @@
 /**
  * str_print - prints a string
  * @val: arg for str
- * Return: string's length
+ * Return: the length of the string
  */
 
 int str_print(va_list val)
 {
-	char *s;
-	int i;
-	int len;
+	char *s = va_arg(val, char *);
 
-	s = va_arg(val, char *);
 	if (s == NULL)
-	{
 		s = "(null)";
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			_putchar(s[i]);
-		return (len);
-	}
-	else
-	{
-		len = _strlen(s);
-		for (i = 0; i < len; i++)
-			_putchar(s[i]);
-		return (len);
-	}
+
+	for (int i = 0; s[i] != '\0'; i++)
+		_putchar(s[i]);
+
+	return (_strlen(s));
 }
