@@ -1,16 +1,20 @@
 #include "main.h"
 
 /**
- * char_print - prints a character
+ * char_print -function that prints a character
  * @val: arg for char
  * Return: 1 on success
  */
 
 int char_print(va_list val)
 {
-	char s;
+	char c;
 
-	s = va_arg(val, int);
-	_putchar(s);
+	c = va_arg(val, int);
+	if (_putchar(c) == -1)
+	{
+		return (0);
+	}
+
 	return (1);
 }
